@@ -29,17 +29,65 @@ The two closest Agents and the two furthest Agents are highlighted on
 the scatterplot.
 </p>
 <p>
-The main program is in model.py. The module containg the Agent class is in 
-agentframework.py
+The main program is in <i>model.py.</i> The module containg the Agent class
+is in <i>agentframework.py</i>
 </p>
 
-<p> The image below shows the model output, with 10 agents after 100 iterations. 
-The green dots are the two closest agents, the red dots the furthest.</p>
+<figure>
 <img src = "agents.jpg">
+<figurecaption><p><b>The image below shows the model output, with 10 agents after 100 iterations. 
+The green dots are the two closest agents, the red dots the furthest.</b></p>
+</figurecaption>
+</figure>
 
 <br>
 <h3>2. I/O </h3>
 
+<p>This model extends the functionality of the Agents model.
+This time an environment grid is initially read-in from the <i>in.txt</i> file.
+As an agent moves it eats the environment where it lands, 10 units at a time.
+If there are less than 10 environment units left when the agent lands it eats them all.
+Each agent also stores the value of how much it has eaten.
+If the agent eats more than 100 units it sicks them up where it is.</p>
+
+<p> The final environment data (after it has been eaten by the agents) is written 
+to a comma separated file called <i>environment.txt.</i></p>
+
+<p>Another file is written, <i>store.txt</i>, which shows the total amount eaten by all the agents.
+This file is appended to every time the model is run.</p>
+
+<p>The print command for agents is overridden so that when you 
+type "print(agents[x])" the agent location and store is printed.</p>
+
+<p>Each agent now determines the size of the environment and makes sure it stays
+within that area.</p>
+
+<p>The program plots the final agent positions after all the iterations and
+the final environment data.</p>
+
+<p>The main program is in <i>eating.py</i>. The module containing the Agent class is in
+<i>agentframework.py</i> </p>
+
+<figure><img src = "test_eating.jpg">
+<figurecaption><p><b>A test model output, with 10 agents after 100 iterations. 
+A flat environment was used to highlight the agents movement and eating. 
+The agents are not being sick.</b></p></figurecaption>
+</figure>
+
+<figure><img src = "eating_no_sick.jpg">
+<figurecaption><p><b>A model output with 10 agents after 100 iterations moving 
+over the environment and eating. 
+The agents are not being sick.</b></p></figurecaption>
+</figure>
+
+<figure><img src = "eating_and_sick.jpg">
+<figurecaption><p><b>A model output with 10 agents after 100 iterations moving 
+over the environment and eating. 
+The agents are eating the environment and being sick after they
+have eaten more than 100 units.</b></p></figurecaption>
+</figure>
+
+<br>
 <h3>3. Communicating </h3>
 
 <h3>4. GUI/Web Scraping </h3>
