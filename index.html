@@ -35,7 +35,7 @@ is in <i>agentframework.py</i>
 
 <figure>
 <img src = "agents.jpg">
-<figurecaption><p><b>The image below shows the model output, with 10 agents 
+<figurecaption><p><b>The image shows the model output, with 10 agents 
 after 1000 iterations. 
 The green dots are the two closest agents, the red dots the furthest.</b></p>
 </figurecaption>
@@ -93,6 +93,57 @@ have eaten more than 100 units.</b></p></figurecaption>
 <br>
 <h3><a href="https://github.com/johnztoth/communicating">3. Communicating</a></h3>
 
+<p> In this model we add sharing. If an agent comes within a predefined distance
+, the neighbourhood, to any other agent then they both share their total store.
+We also include the ability to run the model in batch mode, i.e. run the model
+many times with varying input parameters. The main program is in <i>comm.py</i>,
+the module containing the Agent class and methods is in <i>agentframework.py</i>.
+The program to run in batch mode using subprocess.call() is in <i>sprocess.py</i>.
+</p>
+
+<figure>
+<img src = "comm1.jpg">
+<figurecaption><p><b>The model is run 100 times with the same input:
+no_of_agents = 10, no_of_iterations = 1000, neighbourhood distance = 40. 
+The graph shows the total stored by all agents against the model run. 
+Maximum possible store for 10 agents with 1000 iteration and eating 10 units for
+each move is 100,000. If an agent moves to a place that has been completely eaten
+the total will be less than 100,000. In this model the agents are not being sick.
+This shows the random variability of the model depending upon the agent starting
+positions and the random movement of each agent.</b></p>
+</figurecaption>
+</figure>
+<br>
+<figure>
+<img src = "comm2.jpg">
+<figurecaption><p><b>As before, the model is run 100 times with the same input:
+no_of_agents = 10, no_of_iterations = 1000, neighbourhood distance = 40. 
+The graph shows the total stored by all agents against the model run. 
+This time the agents are sick if they eat more than 100 units. Now the total theoretical
+maximum store is 1000 units. Again, there is a high random variation for models
+with the same input parameters.</b></p>
+</figurecaption>
+</figure>
+
+<br>
+<figure>
+<img src = "comm3.jpg">
+<figurecaption><p><b>This time we vary the input parameters but run each model 
+only once. Neighbourhood distance is increased from 10 to 400 in steps of 10. 
+ Each model has 10 agents and 1000 iterations.</b></p>
+</figurecaption>
+</figure>
+
+<br>
+<figure>
+<img src = "comm4.jpg">
+<figurecaption><p><b>Number of agents is increased from 10 to 100 in steps of 5. 
+ Each model has 1000 iterations and a neighbourhood distance of 40. The
+ average store per agent increases because more sharing is going on with more
+ agents.</b></p>
+</figurecaption>
+</figure>
+<br>
 
 <h3>4. GUI/Web Scraping </h3>
 
