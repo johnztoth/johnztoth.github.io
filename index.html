@@ -149,7 +149,51 @@ only once. Neighbourhood distance is increased from 10 to 400 in steps of 10.
 </figure>
 <br>
 
-<h3>4. GUI/Web Scraping </h3>
+
+<br>
+<h3><a href="https://github.com/johnztoth/communicating">4. Sheep & Wolves</a></h3>
+<p>
+In this model we have two types of agents; sheep and wolves.
+The grass (environment) has a uniform length to start with.
+The sheep randonly move by +/- 1 unit at a time.
+When they move they eat 1 unit of grass where they land. 
+They are not sick and there is no sharing.
+As they eat the grass their store increases.
+The wolves randonly move by +/- 2 units at a time.
+If a wolf gets within eating_range of a sheep it eats the sheep.
+The wolf gets the sheep's store and the sheep agent is removed.
+</p>
+<p>
+The main program is in <i>wolf.py</i>,
+the module containing the Sheep class and methods is in <i>sheepclass.py</i>.
+The module containing the Wolf class and methods is in <i>wolfclass.py</i>.
+</P>
+<br>
+<figure>
+<img src = "wolf1.jpg">
+<figurecaption><p><b>In this model the sheep are represented by the blue dots
+and the wolves by the red dots. The model started with ten sheep and two wolves 
+and was run for 1000 iterations. The initial grass length was 100 and the
+eating_range was 10, i.e. if a wolf approaches a sheep within a distance
+of 10 units the sheep is eaten and the wolf gets its store.
+In this model one sheep was eaten.</b></p>
+</figurecaption>
+</figure>
+<br>
+<br>
+<figure>
+<img src = "wolf2.jpg">
+<figurecaption><p><b>Same as the previous model but this time with six wolves. 
+Five sheep are eaten, five remain alive. 
+</b></p>
+</figurecaption>
+</figure>
+<br>
+
+
+
+<br>
+<h3>5. GUI/Web Scraping </h3>
 
 
 </body>
