@@ -10,25 +10,36 @@
 
 <br>
 <h3>
-<a href="https://github.com/johnztoth/agents">1. Agents</a>
+To The Max!
 </h3>
 <p>
-The Agents project uses object orientated python to create an Agent
-which has a simple x and y coordinate. 
-When an Agent is created it is initialised with a random x and y integer 
-coordinate between 0 and 99.
-The model cycles through a number of iteration steps. 
-For each iteration the Agent is randomly moved by +/- 1 unit in each direction.
-The agent must stay within the bounds of the model 0-99.
-If the agent steps below 0 its position is shifted to 99.
-If the agent steps above 99 its position is shifted to 0.
-After all the iterations are complete the final distance between all the 
-agents is calculated.
-The final agent positions are plotted using a Matplotlib scatter plot. 
-The two closest Agents and the two furthest Agents are highlighted on 
-the scatterplot.
+The objective of this project is to read an elevation file. Calculate the maximum
+gradient at each point. Create a plot of elevation and maximum gradient,
+ and then output the maximum gradient as a file.
+The main program is in <i>snow.py.</i> The input elevation file is <i>snowslope.txt</i> and
+the output file is <i> gradient.txt. </i>
 </p>
-<p>
-The main program is in <i>model.py.</i> The module containg the Agent class
-and the Agent.move method is in <i>agentframework.py</i>
-</p>
+<figure>
+<img src = "snowslope.jpg">
+<figurecaption><p><b>Initial ski area elevation file, snowslope.txt. The grid is 300 x 300
+cells. Maximum elevation is 255 m and minimum elevation is 92 m
+</b></p>
+</figurecaption>
+<p></p>
+<figure>
+<img src = "method.jpg" width="400" height="400" >
+<figurecaption><p><b>To calculate the gradient at any point we take the 8 cells surrounding 
+the central cell. We calculate the average gradient in four directions: North-South, East-West,
+NorthEast-SouthWest and Northwest-Southeast.
+</b></p>
+</figurecaption>
+
+<figure>
+<img src = "gradient.jpg">
+<figurecaption><p><b>Initial ski area elevation file, snowslope.txt. The grid is 300 x 300
+cells. Maximum elevation is 255 m and minimum elevation is 92 m
+</b></p>
+</figurecaption>
+
+
+
