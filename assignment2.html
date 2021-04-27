@@ -13,15 +13,17 @@
 To The Max!
 </h3>
 <p>
-The objective of this project is to read an elevation file. Calculate the maximum
-gradient at each point. Create a plot of elevation and maximum gradient,
+The objective of this project is to read a grid file representing the
+elevation of a ski area and then calculate the maximum
+gradient at each point within the ski area. 
+Create a plot of elevation and maximum gradient,
  and then output the maximum gradient as a file.
-The main program is in <i>snow.py.</i> The input elevation file is <i>snowslope.txt</i> and
+The main Python program is in <i>snow.py.</i> The input elevation file is <i>snowslope.txt</i> and
 the output file is <i> gradient.txt. </i>
 <br>
 <br>
 <figure><img src='elevation.jpeg'>
-<figurecaption><p><b>Ski area elevation. The grid is 300x300. Maximum
+<figurecaption><p><b>Figure 1. Ski area elevation. The grid is 300x300. Maximum
 elevation is 255 m and minimum elevation is 92 m. 
 </b></p></figurecaption></figure>
 
@@ -33,7 +35,7 @@ The absolute of the maximum gradient is then plotted for each cell.
 </p>
 
 <figure><img src='gradient.jpeg'>
-<figurecaption><p><b>Maximum gradient at each raster cell. 
+<figurecaption><p><b>Figure 2. Maximum gradient at each raster cell. 
 </b></p></figurecaption></figure>
 
 <br>
@@ -42,14 +44,14 @@ Methodology for calculating the maximum gradient
 </h3>
 <p> Each cell is surrounded by eight others (apart from the boundary cells).
 It would be possible to calculate the gradient between the central cell 
-(Cell 0, in the figure below) and all of the eight surrounding cells. In this 
+(Cell 0, in Figure 3) and all of the eight surrounding cells. In this 
 way there would be a gradient to the north, a gradient to the south, to the northwest, 
 southest etc. However, in order to have a better representative gradient for
 the central cell it was decide to take an average gradient in each of the
 primary orientations; north-south, east-west, northeast-southwest, and
 northwest-southeast.
 <figure><img src='methodcrop.jpg'>
-<figurecaption><p><b>The centre of each raster cell and its surrounding cells. 
+<figurecaption><p><b>Figure 3. The centre of each raster cell and its surrounding cells. 
 </b></p></figurecaption></figure>
 
 
@@ -76,6 +78,15 @@ maximum value stored and printed in the gradient.txt file. </p>
 <p> It was decided to use the python numpy library. This contains numpy arrays
 which simple to create and index. The numpy.loadtxt function is also very
 useful for loading a regular text grid file directly into an array. 
+
+<br>
+<h3>
+<a href="https://github.com/johnztoth/assignment2">GitHub</a>
+</h3>
+
+
+
+
 <p><i>
 The submission should include all the code and data needed to run the project,
  along with instructions as to how to run it. Code written by you should be 
