@@ -18,28 +18,87 @@ gradient at each point. Create a plot of elevation and maximum gradient,
  and then output the maximum gradient as a file.
 The main program is in <i>snow.py.</i> The input elevation file is <i>snowslope.txt</i> and
 the output file is <i> gradient.txt. </i>
-</p>
-<figure>
-<img src = "snowslope.jpg">
-<figurecaption><p><b>Initial ski area elevation file, snowslope.txt. The grid is 300 x 300
-cells. Maximum elevation is 255 m and minimum elevation is 92 m
-</b></p>
-</figurecaption>
-<p></p>
-<figure>
-<img src = "method.jpg" width="400" height="400" >
-<figurecaption><p><b>To calculate the gradient at any point we take the 8 cells surrounding 
-the central cell. We calculate the average gradient in four directions: North-South, East-West,
-NorthEast-SouthWest and Northwest-Southeast.
-</b></p>
-</figurecaption>
+<br>
+<br>
+<figure><img src='elevation.jpeg'>
+<figurecaption><p><b>Ski area elevation. The grid is 300x300. Maximum
+elevation is 255 m and minimum elevation is 92 m. 
+</b></p></figurecaption></figure>
 
-<figure>
-<img src = "gradient.jpg">
-<figurecaption><p><b>Initial ski area elevation file, snowslope.txt. The grid is 300 x 300
-cells. Maximum elevation is 255 m and minimum elevation is 92 m
-</b></p>
-</figurecaption>
+</p>
+<p>The gradient is calculated at each raster cell by comparing the elevations
+in the eight surrounding cells. Gradient is calculated in a north-south
+direction, east-west direction, northeast-southwest, and northwest-southeast.
+The absolute of the maximum gradient is then plotted for each cell.
+</p>
+
+<figure><img src='gradient.jpeg'>
+<figurecaption><p><b>Maximum gradient at each raster cell. 
+</b></p></figurecaption></figure>
+
+<br>
+<h3>
+Methodology for calculating the maximum gradient
+</h3>
+<p> Each cell is surrounded by eight others (apart from the boundary cells).
+It would be possible to calculate the gradient between the central cell 
+(Cell 0, in the figure below) and all of the eight surrounding cells. In this 
+way there would be a gradient to the north, a gradient to the south, to the northwest, 
+southest etc. However, in order to have a better representative gradient for
+the central cell it was decide to take an average gradient in each of the
+primary orientations; north-south, east-west, northeast-southwest, and
+northwest-southeast.
+<figure><img src='methodcrop.jpg'>
+<figurecaption><p><b>The centre of each raster cell and its surrounding cells. 
+</b></p></figurecaption></figure>
+
+
+<p>In this way the average north-south gradient is 
+(elevation of cell 2 minus elevation of cell 7)/2.0. The average 
+northwest-southeast gradient is
+(elevation cell 1 minus elevation cell 8)/2.0*(sqrt(2)).
+
+<p>This method works for all the internal cells. For the boundary cells a slight
+modification is required. If Cell 0 falls on the northern boundary of the model
+then the north-south gradient is given by 
+(elevation of cell 0 minus elevation of cell 7)/1.0. Similarly, if Cell 0 is
+in the northwest corner of the model then the northwest-southest gradient
+is given by (elevation of cell 0 minus elevation of cell 8)/sqrt(2). The northeast-southwest
+gradient is assumed to be zero.</p>
+<p> It would have been possible to apply this methodology by looping through
+all cells and including a number of IF clauses, however the code runs quicker
+if we loop through the internal cells first and then have seperate loops 
+for each boundary</p>
+<p>The absolute gradient in all four directions is calculated and the 
+maximum value stored and printed in the gradient.txt file. </p>
+
+
+<p> It was decided to use the python numpy library. This contains numpy arrays
+which simple to create and index. The numpy.loadtxt function is also very
+useful for loading a regular text grid file directly into an array. 
+<p><i>
+The submission should include all the code and data needed to run the project,
+ along with instructions as to how to run it. Code written by you should be 
+ supplied as source code. The submission should also 
+ include a short document (under (usually much under) 2000 words) detailing 
+ the intention of the software, issues during development and how these were 
+ overcome (or not), general sources used, the thought processes going into the 
+ software design, and the software development process followed. This document 
+ is intended to give a brief context for the software, explaining how it ended 
+ up how it is, such that any issues can be understood and the work can be assessed 
+ appropriately; it is not intended to be a lengthy investigation into the problem 
+ area solved by the software, unless that is absolutely necessary for understanding 
+ the software.
+
+The specific Assignment 2 Marking Scheme applies. Please make sure there is a 
+simple README file and LICENCE and a document that details the development, 
+if the code works as intended, and what versions should be examined for assessment.
+
+Submission of the project should be by uploading a zip file containing all 
+the relevant components to Minerva.
+
+</i>
+</p>
 
 
 
