@@ -33,6 +33,7 @@ file directly into a numpy array. The matplotlib library was used for ploting th
 </p>
 <p>
 The ski area elevation is shown in Figure 1. The input file has 300 x 300 cells.
+Cell separation is assumed to be 1 metre and elevation is also in metres. 
 It is assumed that the first row of cells in the file corresponds to the northern
 most row, this is to match the gif image that was provided for the exercise.
 </p>
@@ -45,58 +46,48 @@ Maximum elevation is 255 m and minimum elevation is 92 m.
 <br>
 <h3><p style="text-decoration:underline;">Maximum Gradient</p>
 </h3>
-<p>The gradient is calculated at each raster cell by comparing the elevations
-in the eight surrounding cells. Gradient is calculated in a north-south
-direction, east-west direction, northeast-southwest, and northwest-southeast.
-The absolute of the maximum gradient is then plotted for each cell.
-Cell separation is assumed to be 1 metre 
-and elevation is in metres.
+<p>
+The gradient is calculated at each raster cell by comparing its elevation 
+with the elevations of the eight surrounding cells (Figure 2). 
+In this way there are eight gradients: one to the north, one to the northest, 
+one to the east, one to the southest etc. 
 </p>
-
-
-
-<figure><img src='gradient.jpeg'>
-<figurecaption><p><b>Figure 2. Maximum gradient at each raster cell. 
-</b></p></figurecaption></figure>
-
-<br>
-<h3>
-Methodology for calculating the maximum gradient
-</h3>
-<p> Each cell is surrounded by eight others (apart from the boundary cells).
-It would be possible to calculate the gradient between the central cell 
-(Cell 0, in Figure 3) and all of the eight surrounding cells. In this 
-way there would be a gradient to the north, a gradient to the south, to the northwest, 
-southest etc. However, in order to have a better representative gradient for
-the central cell it was decide to take an average gradient in each of the
-primary orientations; north-south, east-west, northeast-southwest, and
-northwest-southeast.
+<p>North gradient is =
+(elevation of cell 2 minus elevation of cell 0)/1.0
 </p>
-<figure><img src='methodcrop.jpg'>
-<figurecaption><p><b>Figure 3. The centre of each raster cell and its surrounding cells. 
-</b></p></figurecaption></figure>
-
-
-<p>In this way the average north-south gradient is 
-(elevation of cell 2 minus elevation of cell 7)/2.0. The average 
-northwest-southeast gradient is
-(elevation cell 1 minus elevation cell 8)/2.0*(sqrt(2)).
+<p>
+Northeast gradient is =
+(elevation cell 3 minus elevation cell 0)/(sqrt(2))
+</p>
+<p>
+South gradient is =
+(elevation cell 7 minus elevation cell 0)/1.0
 </p>
 <p>This method works for all the internal cells. For the boundary cells a slight
 modification is required. If Cell 0 falls on the northern boundary of the model
-then the north-south gradient is given by 
-(elevation of cell 0 minus elevation of cell 7)/1.0. Similarly, if Cell 0 is
-in the northwest corner of the model then the northwest-southest gradient
-is given by (elevation of cell 0 minus elevation of cell 8)/sqrt(2). The northeast-southwest
-gradient is assumed to be zero.</p>
+then the north, northwest, and northeast gradients are assumed zero. 
+Similarly, if Cell 0 is in the northwest corner of the model then 
+only the east, southeast and south gradients are calculated, 
+the other gradients are assumed to be zero. 
+</p>
 <p> It would have been possible to apply this methodology by looping through
 all cells and including a number of IF clauses, however the code runs quicker
 if we loop through the internal cells first and then have seperate loops 
 for each boundary</p>
-<p>The absolute gradient in all four directions is calculated and the 
-maximum value stored and printed in the gradient.txt file. </p>
+<p>The absolute gradient in all eight directions is calculated and the 
+maximum value stored for each cell (Figure 3).
+</p> 
+<p>The maximum absolute gradient for all cells is written to 
+<i>gradient.txt file.</i> </p>
 
-
+<br>
+<figure><img src='methodcrop.jpg'>
+<figurecaption><p><b>Figure 2.</b> The centre of each raster cell and its surrounding cells. 
+</p></figurecaption></figure>
+<br>
+<figure><img src='gradient.jpeg'>
+<figurecaption><p><b>Figure 3.</b> Maximum absolute gradient at each raster cell. 
+</p></figurecaption></figure>
 <br>
 <h3>
 Skier !
