@@ -10,22 +10,22 @@
 <h3><p style="text-decoration:underline;">Introduction</p>
 </h3>
 <p>
-The objective of this assignment is to write a python program to read a file 
-containing the
+The objective of this assignment is to write a python program to first read a 
+file containing the
 elevation data of a ski area (space seperated text file in a grid 
-format) and then to calculate the maximum gradient at each point within the 
-ski area. A plot must be created of elevation and maximum gradient, 
-and the maximum gradient written to an output file with the same format as the  
-input file. 
+format). Then to calculate the maximum gradient at each point within the 
+ski area. Two plots must be created, one for elevation and a second for maximum gradient. 
+The maximum gradient data must then be written to an output file with the same 
+format as the input file. 
 </p> 
 <p>
-The main python program written for this asignment is <i>snow.py.</i> 
+The python program written for this asignment is <i>snow.py.</i> 
 The input elevation 
 file is <i>snowslope.txt</i> and the output file is <i> gradient.txt. </i> 
 To run the program type> python snow.py
 </p>
 <p>
-The main task of the program is to perform a moving calculation on a regular 
+The main task of the program is to perform a moving gradient calculation on a regular 
 grid of data. A simple way to do this to use the numpy array type from the python 
 numpy library. 
 The numpy.loadtxt function is also very useful for loading the regular grid 
@@ -77,12 +77,14 @@ for each boundary</p>
 <p>The absolute gradient in all eight directions is calculated and the 
 maximum value stored for each cell (Figure 3).
 </p> 
-<p>The maximum absolute gradient for all cells is written to 
-<i>gradient.txt file.</i> </p>
+<p>The maximum absolute gradient for all cells is written to the 
+<i>gradient.txt</i> file in a space separated grid format.</p>
 
 <br>
 <figure><img src='methodcrop.jpg'>
-<figurecaption><p><b>Figure 2.</b> The centre of each raster cell and its surrounding cells. 
+<figurecaption><p><b>Figure 2.</b> In order to calculate the maximum gradient 
+at the cell location the evelation of the central cell (0) must be know and the
+elevation of the surrounding eight cells. 
 </p></figurecaption></figure>
 <br>
 <figure><img src='gradient.jpeg'>
