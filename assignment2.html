@@ -4,7 +4,7 @@
 <style> body {background-color:#cce6ff}</style>
 </head>
 <body>
-<h4> GEOG5003M: Assigment 2</h4>
+<h4> GEOG5003M: Assignment 2</h4>
 <h1> To the Max!</h1>
 <br>
 <h3><p style="text-decoration:underline;">Introduction</p>
@@ -73,7 +73,7 @@ the other gradients are assumed to be zero.
 <p> It would have been possible to apply this methodology by looping through
 all cells and including a number of IF clauses, however the code runs quicker
 if we loop through the internal cells first and then have seperate loops 
-for each boundary</p>
+for each boundary.</p>
 <p>The absolute gradient in all eight directions is calculated and the 
 maximum value stored for each cell (Figure 3).
 </p> 
@@ -91,63 +91,57 @@ elevation of the surrounding eight cells.
 <figurecaption><p><b>Figure 3.</b> Maximum absolute gradient at each raster cell. 
 </p></figurecaption></figure>
 <br>
-<h3>
-Skier !
+<h3><p style="text-decoration:underline;">Downhill Skier</p>
 </h3>
-<p>Here we modify the previous program to calculate the path of a downhill skier 
-through the terrain. The main Python program is in <i>skier.py.</i> The input elevation file
-is <i>snowslope.txt</i></p>
-<p>At each point we calculate the direction of maximum 
-downhill gradient: north=0, northeast=1, east=2, southeast=3, south=4,
-southwest=5, west=6, northwest=7.</p>
-<p>The skier is dropped randomly onto the mountain. He moves in the maximum 
-downhill direction until he skis off the map or reaches a maximum number of steps</p>
-<p>Sometimes the skier gets stuck in a small bowl, with no downhill escape. In 
+<p>
+Here we modify the previous program to calculate the path of a downhill skier 
+through the terrain. The Python program is <i>skier.py</i>, the input elevation file
+is <i>snowslope.txt</i>. To run the program type> python skier.py
+</p>
+<p>
+At each point we calculate the direction of maximum 
+downhill gradient, and the cell is assigned a corresponding direction
+indicator between 0 and 7 (Figure 4.).
+</p>
+<p>
+The skier is dropped randomly onto the mountain. He then moves in the maximum 
+downhill direction until he skis off the map or reaches a maximum number of steps.
+The skier's path down the mountain is stored and at the end of the run his path
+is plotted on the elevation data.
+</p>
+<p>
+Sometimes the skier gets stuck in a small bowl, with no downhill escape. In 
 this case he jumps in a random direction for a predefined maximum distance (3 units).
 Sometimes he gets stuck in a bowl which is too big to jump out of !
-To reduce the number of small bowls we also smooth the elevation file before
-he starts his run.</p>
+To reduce the number of small bowls we smooth the elevation file before
+he starts his run.
+</p>
+
+<figure><img src='dirmethod.jpg'>
+<figurecaption><p><b>Figure 4.</b> The direction of maximum downhill gradient
+is calculated. The cell is then assigned a direction indicator to control which
+way the skier will move. 
+</p></figurecaption></figure>
+<br>
 
 <figure><img src='skier_2.jpeg'>
-<figurecaption><p><b>Figure 4. Red dots show the skiers route. Skier having a long run. 
+<figurecaption><p><b>Figure 5. Red dots show the skiers route. Skier having a long run. 
 </b></p></figurecaption></figure>
 
 <figure><img src='skier_3.jpeg'>
-<figurecaption><p><b>Figure 5. Red dots show the skiers route. 
+<figurecaption><p><b>Figure 6. Red dots show the skiers route. 
 Skier gets stuck in a large bowl that he cannot jump out of. 
 </b></p></figurecaption></figure>
 
+<figure><img src='skier_4.jpeg'>
+<figurecaption><p><b>Figure 7. Red dots show the skiers route. 
+Skier skis off the edge of the map. 
+</b></p></figurecaption></figure>
 <br>
 <h3>
-<a href="https://github.com/johnztoth/assignment2">GitHub</a>
+<a href="https://github.com/johnztoth/assignment2">GitHub repository</a>
 </h3>
 
-
-
-
-<p><i>
-The submission should include all the code and data needed to run the project,
- along with instructions as to how to run it. Code written by you should be 
- supplied as source code. The submission should also 
- include a short document (under (usually much under) 2000 words) detailing 
- the intention of the software, issues during development and how these were 
- overcome (or not), general sources used, the thought processes going into the 
- software design, and the software development process followed. This document 
- is intended to give a brief context for the software, explaining how it ended 
- up how it is, such that any issues can be understood and the work can be assessed 
- appropriately; it is not intended to be a lengthy investigation into the problem 
- area solved by the software, unless that is absolutely necessary for understanding 
- the software.
-
-The specific Assignment 2 Marking Scheme applies. Please make sure there is a 
-simple README file and LICENCE and a document that details the development, 
-if the code works as intended, and what versions should be examined for assessment.
-
-Submission of the project should be by uploading a zip file containing all 
-the relevant components to Minerva.
-
-</i>
-</p>
 
 
 
