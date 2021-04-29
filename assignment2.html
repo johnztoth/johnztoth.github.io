@@ -3,38 +3,57 @@
 <title>johnztoth</title>
 <style> body {background-color:#cce6ff}</style>
 </head>
-
 <body>
-<h2> GEOG5003M Programming for Geographical Information Analysis</h2>
-<h1> John Toth: Assignment 2</h1>
-
+<h4> GEOG5003M: Assigment 2</h4>
+<h1> To the Max!</h1>
 <br>
-<h3>
-To The Max!
+<h3><p style="text-decoration:underline;">Introduction</p>
 </h3>
 <p>
-The objective of this project is to read-in a file containing the
-elevation data of a ski area (grid style, space seperated text format) and then 
-to calculate the maximum gradient at each point within the ski area. 
-A plot must be created of elevation and maximum gradient,
- and the maximum gradient written to an output file with the same format as the 
- input file.
-The main Python program is in <i>snow.py.</i> The input elevation file is <i>snowslope.txt</i> and
-the output file is <i> gradient.txt. </i> Cell separation is assumed to be 1 metre 
-and elevation is in metres.
-<br>
+The objective of this assignment is to write a python program to read a file 
+containing the
+elevation data of a ski area (space seperated text file in a grid 
+format) and then to calculate the maximum gradient at each point within the 
+ski area. A plot must be created of elevation and maximum gradient, 
+and the maximum gradient written to an output file with the same format as the  
+input file. 
+</p> 
+<p>
+The main python program written for this asignment is <i>snow.py.</i> 
+The input elevation 
+file is <i>snowslope.txt</i> and the output file is <i> gradient.txt. </i> 
+To run the program type> python snow.py
+</p>
+<p>
+The main task of the program is to perform a moving calculation on a regular 
+grid of data. A simple way to do this to use the numpy array type from the python 
+numpy library. 
+The numpy.loadtxt function is also very useful for loading the regular grid 
+file directly into a numpy array. The matplotlib library was used for ploting the maps.
+</p>
+<p>
+The ski area elevation is shown in Figure 1. The input file has 300 x 300 cells.
+It is assumed that the first row of cells in the file corresponds to the northern
+most row, this is to match the gif image that was provided for the exercise.
+</p>
+
 <br>
 <figure><img src='elevation.jpeg'>
-<figurecaption><p><b>Figure 1. Ski area elevation. The grid is 300x300. Maximum
-elevation is 255 m and minimum elevation is 92 m. 
-</b></p></figurecaption></figure>
-
-</p>
+<figurecaption><p><b>Figure 1.</b> Ski area elevation. The grid is 300 x 300 cells. 
+Maximum elevation is 255 m and minimum elevation is 92 m. 
+</p></figurecaption></figure>
+<br>
+<h3><p style="text-decoration:underline;">Maximum Gradient</p>
+</h3>
 <p>The gradient is calculated at each raster cell by comparing the elevations
 in the eight surrounding cells. Gradient is calculated in a north-south
 direction, east-west direction, northeast-southwest, and northwest-southeast.
 The absolute of the maximum gradient is then plotted for each cell.
+Cell separation is assumed to be 1 metre 
+and elevation is in metres.
 </p>
+
+
 
 <figure><img src='gradient.jpeg'>
 <figurecaption><p><b>Figure 2. Maximum gradient at each raster cell. 
@@ -52,6 +71,7 @@ southest etc. However, in order to have a better representative gradient for
 the central cell it was decide to take an average gradient in each of the
 primary orientations; north-south, east-west, northeast-southwest, and
 northwest-southeast.
+</p>
 <figure><img src='methodcrop.jpg'>
 <figurecaption><p><b>Figure 3. The centre of each raster cell and its surrounding cells. 
 </b></p></figurecaption></figure>
@@ -61,7 +81,7 @@ northwest-southeast.
 (elevation of cell 2 minus elevation of cell 7)/2.0. The average 
 northwest-southeast gradient is
 (elevation cell 1 minus elevation cell 8)/2.0*(sqrt(2)).
-
+</p>
 <p>This method works for all the internal cells. For the boundary cells a slight
 modification is required. If Cell 0 falls on the northern boundary of the model
 then the north-south gradient is given by 
@@ -76,10 +96,6 @@ for each boundary</p>
 <p>The absolute gradient in all four directions is calculated and the 
 maximum value stored and printed in the gradient.txt file. </p>
 
-
-<p> It was decided to use the python numpy library. This contains numpy arrays
-which simple to create and index. The numpy.loadtxt function is also very
-useful for loading a regular text grid file directly into an array.</p> 
 
 <br>
 <h3>
