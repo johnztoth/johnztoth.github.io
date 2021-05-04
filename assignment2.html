@@ -11,14 +11,14 @@
 <p>
 The objective of this assignment is to write a python program to first read a 
 file containing the
-elevation data of a ski area (space seperated text file in a grid 
+elevation data of a ski area (space separated text file in a grid 
 format). Then to calculate the maximum gradient at each point within the 
 ski area. Two plots must be created, one for elevation and a second for maximum gradient. 
 The maximum gradient data must then be written to an output file with the same 
 format as the input file. 
 </p> 
 <p>
-The python program written for this asignment is <i>snow.py.</i> 
+The python program written for this assignment is <i>snow.py.</i> 
 The input elevation 
 file is <i>snowslope.txt</i> and the output file is <i> gradient.txt. </i> 
 To run the program type> python snow.py
@@ -28,7 +28,7 @@ The main task of the program is to perform a moving gradient calculation on a re
 grid of data. A simple way to do this to use the numpy array type from the python 
 numpy library. 
 The numpy.loadtxt function is also very useful for loading the regular grid 
-file directly into a numpy array. The matplotlib library was used for ploting the maps.
+file directly into a numpy array. The matplotlib library was used for plotting the maps.
 </p>
 <p>
 The ski area elevation is shown in Figure 1. The input file has 300 x 300 cells.
@@ -47,8 +47,8 @@ Maximum elevation is 255 m and minimum elevation is 92 m.
 <p>
 The gradient is calculated at each raster cell by comparing its elevation 
 with the elevations of the eight surrounding cells (Figure 2). 
-In this way there are eight gradients: one to the north, one to the northest, 
-one to the east, one to the southest etc. 
+In this way there are eight gradients: one to the north, one to the northeast, 
+one to the east, one to the southeast etc. 
 </p>
 <p>North gradient is =
 (elevation of cell 2 minus elevation of cell 0)/1.0
@@ -70,7 +70,7 @@ the other gradients are assumed to be zero.
 </p>
 <p> It would have been possible to apply this methodology by looping through
 all cells and including a number of IF clauses, however the code runs quicker
-if we loop through the internal cells first and then have seperate loops 
+if we loop through the internal cells first and then have separate loops 
 for each boundary.</p>
 <p>The absolute gradient in all eight directions is calculated and the 
 maximum value stored for each cell (Figure 3).
@@ -81,8 +81,8 @@ maximum value stored for each cell (Figure 3).
 <br>
 <figure><img src='methodcrop.jpg'>
 <figurecaption><p><b>Figure 2.</b> In order to calculate the maximum gradient 
-at the cell location the evelation of the central cell (0) must be know and the
-elevation of the surrounding eight cells. 
+at the cell location the elevation of the central cell (0) and the
+elevation of the surrounding eight cells must be know. 
 </p></figurecaption></figure>
 <br>
 <figure><img src='gradient.jpeg'>
