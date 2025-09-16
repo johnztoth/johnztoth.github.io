@@ -4,7 +4,6 @@
 <title>pixel</title>
 <style>
 	body { 
-		font-size: 18px;
 		max-width: 800px;
 		margin: auto;
 		background-color:White;
@@ -15,6 +14,19 @@
 	.custom2 {
 		font-size: 22px;
 	}
+	.custom3 {
+		font-size: 22pt;
+	}
+	.custom4 {
+      font-size: 2rem; /* 2 × root size. normally 2 x 16px*/
+      color: green;
+    }
+	
+	@media (min-width: 600px) {
+      body {
+        font-size: 1rem; /* 16px on larger screens */
+      }
+    }
 </style>
 </head>
 
@@ -27,7 +39,7 @@
 	
 	<a href="bio.html" style="color: grey; text-decoration: none;">link size text</a>
 	
-    <p>normal paragraph. should be 18px from style definition</p>
+    <p>normal paragraph. no font size defined</p>
 	
 	<div class="custom1">
 	<p>custom1 div. should be 12px</p>
@@ -35,6 +47,14 @@
 	
 	<div class="custom2">
 	<p>custom2 div. should be 22px</p>
+	</div>
+	
+	<div class="custom3">
+	<p>custom3 div. should be 22pt</p>
+	</div>
+	
+	<div class="custom4">
+	<p>custom4 div. should be 2rem, root element size</p>
 	</div>
 	
 	<p>back to normal</p>
