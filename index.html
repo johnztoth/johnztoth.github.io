@@ -7,34 +7,69 @@
 		max-width: 800px;
 		margin: auto;
 		background-color:White;
+		color: darkblue;
 	}
 	.custom1 {
-      font-size: 1.4rem; /* root element size*/
+		font-size: 1.2rem;          <!-- root element size -->
     }
+	.custom2 {
+		font-size: 1rem;
+	}
 	
 </style>
 </head>
 
 <body>
-	<div class="custom1">
+	<div class='custom1'>
 	<br>
 	<br>
 	<p><b>john toth</b></p>
 	<br>
 	<hr>
 	
-	<p><a href="biomes1.html" style="color: blue; text-decoration: none;">biomes and sample locations</a></p>
+	<p><a href="biomes1.html" style="color: green; text-decoration: none;">biomes and sample locations</a></p>
 
-	<p><a href="inference1.html" style="color: blue; text-decoration: none;">inference</a></p>
+	<p><a href="inference1.html" style="color: green; text-decoration: none;">inference</a></p>
 
 	<br>  
 
 	<hr>
-	<p><a href="mbres.html" style="color: grey; text-decoration: none;">masters by research</a></p>
-
-	<p><a href="bio.html" style="color: grey; text-decoration: none;">brief bio</a></p>
 	
-	</div>
+	<p><b>masters by research</b></p>
+
+	<p>John is a postgraduate research student at University of Leeds, UK, in the Faculty of Environment.
+	His research project is to use AI for landcover classification in dryland
+	environments. He has built a convolutional neural network to classify multispectral satellite imagery from the Sentinel-2 
+	program at 10 m resolution. 
+	The neural network is based upon a light convolution network proposed by Song et al. (2019).
+	The neural network was trained on labelled landcover samples (Stanimirova et al. 2023) from global dryland biomes.
+	The accuracy on the test dataset is approximately 85%.
+	The principal software libraries used were Pytorch, Geemap, and Geopandas, in a Jupyter Notebook environment.</p>
+	<p>The biomes of interest are (from Terrestrial Ecoregions of the World, Olson et al. 2001):
+	<ul style="padding-left: 0; margin-left: 0; list-style-position: inside;">
+		<li>Tropical and Subtropical Dry Broadleaf Forests - Biome 2</li>
+		<li>Tropical and Subtropical Grasslands, Savannas, and Shrublands - Biome 7</li>
+		<li>Temparate Grasslands, Savannas, and Shrublands - Biome 8</li>
+		<li>Montane Grasslands and Shrublands - Biome 10</li>
+		<li>Mediterranean Forests, Woodlands, and Scrub - Biome 12</li>
+		<li>Deserts and Xeric Shrublands - Biome 13</li>
+	</ul>
+	</div class='custom1'>
+	
+	<div class='custom2'>
+	<p>Olson, D.M., Dinerstein, E., Wikramanayake, E.D., Burgess, N.D., Powell, G.V., Underwood, E.C., D’amico, J.A., Itoua, I., Strand, H.E. and 
+	Morrison, J.C. 2001. Terrestrial Ecoregions of the World: A New Map of Life on Earth: A new global map of terrestrial 
+	ecoregions provides an innovative tool for conserving biodiversity. BioScience. 51(11), pp.933–938.</p>
+	<p>Song, H., Kim, Yonghyun and Kim, Yongil 2019. A patch-based light convolutional neural network for land-cover mapping using Landsat-8 images. 
+	Remote Sensing. 11(2), p.114.</p>
+	<p>Stanimirova, R., Tarrio, K., Turlej, K., McAvoy, K., Stonebrook, S., Hu, K.-T., Arévalo, P., Bullock, E.L., Zhang, Y. and 
+	Woodcock, C.E. 2023. A global
+	land cover training dataset from 1984 to 2020. Scientific Data. 10(1), p.879.</p>
+	</div> <!--  close custom2 div -->
+	
+	<div class='custom1'>
+	<p><a href="bio.html" style="color: green; text-decoration: none;">brief bio</a></p>
+	</div> 
 	
 </body>
 </html>
