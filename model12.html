@@ -26,21 +26,21 @@
 	<br>
 	<hr>
 	<p><b>Model - Biome 12 - Mediterranean Forests, Woodlands and Scrub.</b></p>
-	<p>A convolutional neural network was trained on 27006 Sentinel-2 samples (10 x 5 x 5 px) from the Mediterranean
-	global biome. The neural network has an accuracy of 85% on the global test dataset.</p>
+	
 
 	<br>
 	
 	<figure style="margin: 0; padding: 0; text-align: left;">
-        <img src="Figures/plot_loss_B12.jpg" style="max-width: 80%; height: auto">
-        <figcaption style="color: black; font-size: 1.0rem;"><b>Figure 1. Loss curve for CNN trained on Biome-12 samples.</b></figcaption>
+        <img src="Figures/plot_confusion_B12.jpg" style="max-width: 80%; height: auto">
+        <figcaption style="color: black; font-size: 1.0rem;"><b>Figure 1. CNN trained on Sentinel-2 data. Confusion Matrix. The main misclassifications are between the 
+		Herbaceous and Trees classes. Model accuracy is 87% and F1-macro score is 0.80 after 500 ephochs</b></figcaption>
     </figure>
 	<br>
 	<br>
     <figure style="margin: 0; padding: 0; text-align: left;">
-        <img src="Figures/plot_confusion_B12.jpg" style="max-width: 80%; height: auto">
-        <figcaption style="color: black; font-size: 1.0rem;"><b>Figure 1. Confusion Matrix. The main misclassifications are between the 
-		Herbaceous and Trees classes.</b></figcaption>
+        <img src="Figures_AlphaEarth/plot_confusion_Alpha_B12.jpg" style="max-width: 80%; height: auto">
+        <figcaption style="color: black; font-size: 1.0rem;"><b>Figure 2. Neural Netowrk trained on AlphaEarth data. Confusion Matrix. The main misclassifications are between the 
+		Herbaceous and Trees classes. Model accuracy is 96% and F1-macro score is 0.90 after 500 ephochs</b></figcaption>
     </figure>
 	<br>
 	<br>
