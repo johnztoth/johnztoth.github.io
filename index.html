@@ -29,10 +29,14 @@
 	
 	<figure style="margin: 0; padding: 0; text-align: left;">
     <img src="Figures/model_stats1.jpg" style="max-width: 90%; height: auto">
-    <figcaption style="color: black; font-size: 1.0rem;">Model Accuracy and F1 Score. The CNN Patch model has 10 input channels, the CNN Patch4
-	model has 4 input channels (B,G,R,NIR). The model with 10 channels performs significantly better than the model with 4 channels. 
-	Because of the <a href="stats.html" style="color: green; text-decoration: none;">class imbalances</a> 
-	within the GLanCE dataset the F1-macro score is a better reflection of model effectiveness than the Accuracy.</figcaption>
+    <figcaption style="color: black; font-size: 1.0rem;">Model Accuracy and F1 Score.
+	The 'CNN Patch' model has 10 input channels from Sentinel-2 images.
+	The 'AlphaEarth' model is fine tuned on the 64 AlphaEarth embeddings.
+	All models use the GLanCE landcover dataset labels.
+	The Sentinel trained patch CNN class atains high accuracies but the class imbalances inherent in the
+	<a href="stats.html" style="color: green; text-decoration: none;">GLanCE dataset</a> 
+	result in a low F1 score. The fully connected NN fine tuned on the AlphaEarth model gives both a high
+	accuracy and a high F1 score.</figcaption>
     </figure>
 	<br>
 		
